@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Latihan Recycleview</string>
+    <string name="nama_student">nama student</string>
+    <string name="usia_student">usia student</string>
+    <string name="kategori">kategori</string>
+    <string name="judul_berita">Judul berita</string>
+    <string name="hari_ini_23_maret_2023">Hari ini 23 Maret 2023</string>
+    <string name="img_news">img news</string>
+</resources>

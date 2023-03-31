@@ -34,21 +34,37 @@ class NewsActivity : AppCompatActivity() {
 
 
         )
-        val adapterNews = NewsAdapter(listNewsData)
+        var adapterNews = NewsAdapter(listNewsData)
 
         binding.rvNews.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvNews.adapter = adapterNews
 
 
         adapterNews.onClick = {
-//            val moveActivity = Intent(this, DetailsNewsActivity::class.java)
-//            moveActivity.putExtra("DETAILS_NEWS", it)
-//            startActivity(moveActivity)
 
             val pindah = Intent(this, DetailsNewsActivity::class.java)
             pindah.putExtra("DETAILS_NEWS", it)
             startActivity(pindah)
             Toast.makeText(this, "coba", Toast.LENGTH_SHORT).show()
         }
+
+
+        binding.btnUpData.setOnClickListener {
+            listNewsData[2] = DataNews("percobaan updata data tidak menggunakan diffutil", "sekarang", "percobaan", R.drawable.img_woman)
+            adapterNews = NewsAdapter(listNewsData)
+            binding.rvNews.adapter = adapterNews
+            adapterNews.notifyDataSetChanged()
+
+        }
+
+        var adapterNewDiffUtil: NewsAdapterDiffUtil
+
+        binding.btnUpDataUsingDiff.setOnClickListener {
+            listNewsData[2] = DataNews("percobaan updata data menggunakan diffutil", "sekarang", "percobaan", R.drawable.img_woman)
+            adapterNewDiffUtil = NewsAdapterDiffUtil(listNewsData)
+            adapterNewDiffUtil.submitData(listNewsData)
+            binding.rvNews.adapter = adapterNewDiffUtil
+        }
+
     }
 }

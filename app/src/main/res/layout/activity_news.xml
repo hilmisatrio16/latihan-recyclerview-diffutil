@@ -11,5 +11,34 @@
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_student" />
 
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:padding="4dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:id="@+id/btnUpData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update data ke 2 tidak menggunakan diff"
+            android:textAllCaps="false"
+            android:backgroundTint="#3E54AC"/>
+        <Button
+            android:padding="4dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:id="@+id/btnUpDataUsingDiff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:backgroundTint="#3E54AC"
+            android:text="Update data ke 2 menggunkan diff"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

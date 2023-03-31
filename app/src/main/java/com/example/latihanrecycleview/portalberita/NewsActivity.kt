@@ -1,8 +1,10 @@
 package com.example.latihanrecycleview.portalberita
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract.Data
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.latihanrecycleview.R
 import com.example.latihanrecycleview.Student
@@ -36,5 +38,17 @@ class NewsActivity : AppCompatActivity() {
 
         binding.rvNews.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvNews.adapter = adapterNews
+
+
+        adapterNews.onClick = {
+//            val moveActivity = Intent(this, DetailsNewsActivity::class.java)
+//            moveActivity.putExtra("DETAILS_NEWS", it)
+//            startActivity(moveActivity)
+
+            val pindah = Intent(this, DetailsNewsActivity::class.java)
+            pindah.putExtra("DETAILS_NEWS", it)
+            startActivity(pindah)
+            Toast.makeText(this, "coba", Toast.LENGTH_SHORT).show()
+        }
     }
 }

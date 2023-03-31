@@ -5,4 +5,4 @@ data class DataNews(
     var tanggalBerita : String,
     var kategoriBerita : String,
     var imgBerita : Int
-)
+) : java.io.Serializable
